@@ -18,4 +18,14 @@ const sequelize = new Sequelize(
   }
 );
 
+// Test connection
+sequelize.authenticate()
+  .then(() => console.log('✅ Database connected'))
+  .catch(err => console.error('❌ Database connection failed:', err));
+
+// Sync models
+sequelize.sync({ alter: false })
+  .then(() => console.log('✅ Database synchronized'))
+  .catch(err => console.error('❌ Database sync failed:', err));
+
 module.exports = sequelize;
