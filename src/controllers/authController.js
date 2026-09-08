@@ -1,3 +1,4 @@
+// src/controllers/authController.js
 const authService = require('../services/authService');
 
 // Register new user
@@ -38,6 +39,23 @@ exports.login = async (req, res) => {
     res.status(error.statusCode || 500).json({
       success: false,
       message: error.message || 'Failed to login'
+    });
+  }
+};
+
+// Get current user profile (TAMBAHKAN INI DENGAN BENAR)
+exports.getMe = async (req, res) => {
+  try {
+    const user = await authService.getUserById(req.user.id);
+    res.status(200).json({
+      success: true,
+      data: user
+    });
+  } catch (error) {
+    console.error('GetMe error:', error);
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to get user profile'
     });
   }
 };

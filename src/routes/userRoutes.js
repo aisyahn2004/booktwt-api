@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
+const readingProgressController = require('../controllers/readingProgressController');
 const authMiddleware = require('../middlewares/authMiddleware');
 const { profileUpdateValidation, validate } = require('../middlewares/validationMiddleware');
 
@@ -17,5 +18,8 @@ router.get('/profile', authMiddleware, userController.getProfile);
  * @access  Private
  */
 router.put('/profile', authMiddleware, profileUpdateValidation, validate, userController.updateProfile);
+
+// GET /api/users/statistics  
+router.get('/statistics', authMiddleware, readingProgressController.getUserStatistics);
 
 module.exports = router;

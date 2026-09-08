@@ -4,7 +4,7 @@ require('dotenv').config();
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
-  process.env.DB_PASS,
+  process.env.DB_PASSWORD,
   {
     host: process.env.DB_HOST,
     dialect: 'mysql',
@@ -20,12 +20,12 @@ const sequelize = new Sequelize(
 
 // Test connection
 sequelize.authenticate()
-  .then(() => console.log('✅ Database connected'))
-  .catch(err => console.error('❌ Database connection failed:', err));
+  .then(() => console.log('Database connected'))
+  .catch(err => console.error('Database connection failed:', err));
 
 // Sync models
 sequelize.sync({ alter: false })
-  .then(() => console.log('✅ Database synchronized'))
-  .catch(err => console.error('❌ Database sync failed:', err));
+  .then(() => console.log('Database synchronized'))
+  .catch(err => console.error('Database sync failed:', err));
 
 module.exports = sequelize;

@@ -1,6 +1,5 @@
 const { Op } = require('sequelize');
-const Book = require('../models/Book');
-const User = require('../models/User');
+const { Book, User } = require('../models');
 
 // Helper: buat custom error dengan statusCode
 const createError = (message, statusCode) => {

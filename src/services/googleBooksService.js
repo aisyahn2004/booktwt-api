@@ -1,5 +1,5 @@
 const https = require('https');
-const Book  = require('../models/Book');
+const {Book} = require('../models');
 
 // Helper: custom error
 const createError = (message, statusCode) => {
