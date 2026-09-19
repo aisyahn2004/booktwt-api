@@ -1,12 +1,12 @@
 // src/app.js
 const express = require('express');
-const dotenv = require('dotenv');
+//const dotenv = require('dotenv');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpecs = require('./config/swagger');
 
 // Load environment variables
-dotenv.config();
+//dotenv.config();
 
 const app = express();
 
