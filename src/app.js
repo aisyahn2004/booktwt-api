@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpecs = require('./config/swagger');
+const sequelize = require('./config/database');
 
 // Load environment variables
 //dotenv.config();
@@ -42,6 +43,16 @@ app.use('/api/books', bookRoutes);
 app.use('/api/reading-list', readingListRoutes);
 app.use('/api/reviews', reviewRoutes);
 app.use('/api/reading-progress', readingProgressRoutes);
+
+// Test connection
+sequelize.authenticate()
+  .then(() => console.log('Database connected'))
+  .catch(err => console.error('Database connection failed:', err));
+
+// Sync models
+sequelize.sync({ alter: false })
+  .then(() => console.log('Database synchronized'))
+  .catch(err => console.error('Database sync failed:', err));
 
 // Error handling middleware
 app.use((err, req, res, next) => {

@@ -12,7 +12,7 @@ const sequelize = new Sequelize(
     dialect: 'mysql',
     logging: false,
     pool: {
-      max: 5,
+      max: 2,
       min: 0,
       acquire: 30000,
       idle: 10000
@@ -20,14 +20,6 @@ const sequelize = new Sequelize(
   }
 );
 
-// Test connection
-sequelize.authenticate()
-  .then(() => console.log('Database connected'))
-  .catch(err => console.error('Database connection failed:', err));
 
-// Sync models
-sequelize.sync({ alter: false })
-  .then(() => console.log('Database synchronized'))
-  .catch(err => console.error('Database sync failed:', err));
 
 module.exports = sequelize;
