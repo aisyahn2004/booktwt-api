@@ -2,11 +2,14 @@
 
 > **RESTful API untuk Pengelolaan Aktivitas Komunitas Pembaca Buku**
 
-[![Node.js](https://img.shields.io/badge/Node.js-20.x-green)](https://nodejs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-5.x-blue)](https://expressjs.com/)
-[![MySQL](https://img.shields.io/badge/MySQL-8.x-orange)](https://www.mysql.com/)
-[![Swagger](https://img.shields.io/badge/Swagger-OpenAPI%203.0-brightgreen)](https://swagger.io/)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+![Node.js](https://img.shields.io/badge/Node.js-20.x-green)
+![Express.js](https://img.shields.io/badge/Express.js-5.2.1-blue)
+![MySQL](https://img.shields.io/badge/MySQL-8.x-orange)
+![Sequelize](https://img.shields.io/badge/Sequelize-6.37.7-blue)
+![JWT](https://img.shields.io/badge/JWT-Auth-red)
+![Swagger](https://img.shields.io/badge/Swagger-OpenAPI%203.0-brightgreen)
+![License](https://img.shields.io/badge/License-ISC-yellow)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
 ---
 
@@ -53,19 +56,19 @@ Sistem ini dikembangkan dalam **3 sprint iteratif** menggunakan metodologi **Agi
 
 ## 🛠️ Teknologi yang Digunakan
 
-| Komponen | Teknologi |
-|----------|-----------|
-| **Runtime** | Node.js |
-| **Framework** | Express.js |
-| **Database** | MySQL |
-| **ORM** | Sequelize |
-| **Autentikasi** | JSON Web Token (JWT) |
-| **Enkripsi Password** | bcryptjs |
-| **Validasi** | express-validator |
-| **Dokumentasi API** | Swagger UI (OpenAPI 3.0) |
-| **Testing** | Postman (Black Box Testing) |
-| **Deployment** | Railway |
-| **Version Control** | Git & GitHub |
+| Komponen | Teknologi | Versi |
+|----------|-----------|-------|
+| **Runtime** | Node.js | 20.x |
+| **Framework** | Express.js | ^5.2.1 |
+| **Database** | MySQL | 8.x |
+| **ORM** | Sequelize | ^6.37.7 |
+| **Autentikasi** | JSON Web Token (JWT) | ^9.0.3 |
+| **Enkripsi Password** | bcryptjs | ^3.0.3 |
+| **Validasi** | express-validator | ^7.3.1 |
+| **Dokumentasi API** | Swagger UI (OpenAPI 3.0) | ^5.0.1 |
+| **Testing** | Postman | - |
+| **Deployment** | Railway | - |
+| **Version Control** | Git & GitHub | - |
 
 ---
 
@@ -125,7 +128,7 @@ booktwt-api/
 
 ### Prasyarat
 
-Pastikan Anda sudah menginstal:
+Pastikan sudah menginstal:
 - [Node.js](https://nodejs.org/) (v20 atau lebih baru)
 - [MySQL](https://www.mysql.com/) (v8 atau lebih baru)
 - [Git](https://git-scm.com/)
@@ -150,7 +153,7 @@ Pastikan Anda sudah menginstal:
    cp .env.example .env
    ```
    
-   Lalu edit file `.env` sesuai konfigurasi Anda:
+   Lalu edit file `.env` sesuai konfigurasi:
    ```env
    # Database
    DB_HOST=localhost
@@ -320,7 +323,7 @@ Authorization: Bearer <your_jwt_token>
 
 ## 🤝 Kontribusi
 
-Project ini merupakan hasil penelitian skripsi dan **terbuka untuk kontribusi**. Jika Anda ingin berkontribusi:
+Project ini merupakan hasil penelitian skripsi dan **terbuka untuk kontribusi**. Jika ingin berkontribusi:
 
 1. Fork repository ini
 2. Buat branch baru (`git checkout -b fitur-baru`)
@@ -332,7 +335,7 @@ Project ini merupakan hasil penelitian skripsi dan **terbuka untuk kontribusi**.
 
 ## 📄 Lisensi
 
-Project ini dilisensikan di bawah **MIT License**. Lihat file [LICENSE](LICENSE) untuk detail.
+Project ini dilisensikan di bawah **ISC License**. 
 
 ---
 
