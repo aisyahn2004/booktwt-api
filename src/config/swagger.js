@@ -17,11 +17,11 @@ const options = {
       `,
       contact: {
         name: 'Aisyah Nurhayati',
-        email: 'aisyah@example.com',
+        email: 'aisyah11hayati@gmail.com',
       },
       license: {
-        name: 'MIT',
-        url: 'https://opensource.org/licenses/MIT',
+        name: 'ISC',
+        url: 'https://opensource.org/licenses/ISC',
       },
     },
     servers: [
