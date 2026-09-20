@@ -60,10 +60,12 @@ app.use((req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Swagger UI: http://localhost:${PORT}/api-docs`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Swagger UI: http://localhost:${PORT}/api-docs`);
+  });
+}
 
 module.exports = app;
