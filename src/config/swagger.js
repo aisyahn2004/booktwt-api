@@ -26,6 +26,10 @@ const options = {
     },
     servers: [
       {
+        url: 'https://booktwt-api-production.up.railway.app/api',
+        description: 'Production Server',
+      },
+      {
         url: 'http://localhost:3000/api',
         description: 'Development Server',
       },
