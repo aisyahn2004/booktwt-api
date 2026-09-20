@@ -6,20 +6,67 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const { profileUpdateValidation, validate } = require('../middlewares/validationMiddleware');
 
 /**
- * @route   GET /api/users/profile
- * @desc    Get current user profile
- * @access  Private
+ * @swagger
+ * /users/profile:
+ *   get:
+ *     summary: Get current user profile
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: User profile retrieved successfully
+ *       401:
+ *         description: Unauthorized
  */
 router.get('/profile', authMiddleware, userController.getProfile);
 
 /**
- * @route   PUT /api/users/profile
- * @desc    Update current user profile
- * @access  Private
+ * @swagger
+ * /users/profile:
+ *   put:
+ *     summary: Update current user profile
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 example: "Aisyah Nurhayati"
+ *               bio:
+ *                 type: string
+ *                 example: "Pecinta buku dari Karawang"
+ *               profile_picture:
+ *                 type: string
+ *                 example: "https://example.com/photo.jpg"
+ *     responses:
+ *       200:
+ *         description: Profile updated successfully
+ *       401:
+ *         description: Unauthorized
  */
 router.put('/profile', authMiddleware, profileUpdateValidation, validate, userController.updateProfile);
 
-// GET /api/users/statistics  
+/**
+ * @swagger
+ * /users/statistics:
+ *   get:
+ *     summary: Get user reading statistics
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Statistics retrieved successfully
+ *       401:
+ *         description: Unauthorized
+ */
 router.get('/statistics', authMiddleware, readingProgressController.getUserStatistics);
 
 module.exports = router;

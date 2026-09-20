@@ -85,30 +85,7 @@ router.post('/register', registerValidation, validate, authController.register);
  */
 router.post('/login', loginValidation, validate, authController.login);
 
-/**
- * @swagger
- * /auth/me:
- *   get:
- *     summary: Get current user profile
- *     tags: [Users]
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: User profile retrieved successfully
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: success
- *                 data:
- *                   $ref: '#/components/schemas/UserResponse'
- *       401:
- *         description: Unauthorized - Invalid or missing token
- */
+
 router.get('/me', authMiddleware, authController.getMe);
 
 module.exports = router;
